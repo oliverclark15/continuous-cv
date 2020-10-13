@@ -1,0 +1,178 @@
+%-------------------------
+% Resume in Latex
+% Author : Sourabh Bajaj
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{blindtext}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.2in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-6pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{ #2 \vspace{-2pt}}
+  }
+}
+
+
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-2pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*] \vspace{.1cm}}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+
+
+
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{center}
+    \textbf{\huge{Oliver Clark}}
+\end{center}
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+   \href{https://oliverclark.org/}{https://oliverclark.org/} & Email : \href{mailto:oliverclark15@gmail.com}{oliverclark15@gmail.com}\\
+  \href{https://oliverclark.org/}{https://oliverclark.org/} & Mobile : +1-802-377-2870\\
+\end{tabular*}
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {McGill University}{Montreal, QC, Canada}
+      {Faculty of Engineering, Bachelor of Software Engineering (BSE)}{2015-2020}
+  
+  
+
+   \resumeSubItem{Relevant Coursework}{}
+	\resumeSubHeadingListStart	
+	\resumeSubItem{Computer \& Software Engineering}{: Algorithms \& Data Structures, Algorithm Design, Applied Machine Learning, Artificial Intelligence, Distributed Systems, Computer Organization, Database Systems, Intro to Software Eng., Model-Based Programming, Operating Systems, Parallel Computing, Realistic Image Synthesis, Signals \& Networks, Software Engineering Practice, Software Delivery, Software Validation}
+	\resumeSubItem{Mathematics}{: Discrete Math, Calculus III, Linear Algebra, ODEs for Engineers, Probability \& Stats for Engineers}
+
+	\resumeSubHeadingListEnd
+
+\resumeSubHeadingListEnd
+
+
+
+
+
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+  
+    \resumeSubheading{Gorilla Group}{Montreal, QC, Canada}
+    {Backend Software Developer}{July 2020 - }
+     \resumeSubHeadingListStart
+        \resumeItem{} {\blindtext}
+    \resumeSubHeadingListEnd
+    \resumeSubheading
+      {The MITRE Corporation}{Bedford, MA}
+      {Cyber Security Intern}{May 2018 - August 2019}
+      \resumeSubHeadingListStart
+        \resumeItem{} {Identified potential vulnerabilities in a simulated avionics environment before proposing mitigation techniques to the team through documentation and presentation}
+        \resumeItem{} {Developed prototype Git infrastructure to allow fast code search and fine-grained access control on secure files for an internal project}
+        \resumeItem{} {Performed security based code evaluations on internal and open-source applications using tools such as Fortify, Klocwork, and Semmle}
+        \resumeItem{} {Created a continuous integration \& deployment pipeline  to be used in development of an internal Python project}
+      \resumeSubHeadingListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PUBLICATIONS-----------------
+\section{Publications}
+  \resumeSubHeadingListStart
+    \resumeSubItem{}{D. Abric, \underline{O. E. Clark}, M. Caminiti, K. Gallaba, and S. McIntosh , ``Can Duplicate Questions
+on Stack Overflow Benefit the Software Development Community?'', In \textit{Proceedings of the
+16th International Conference on Mining Software Repositories (MSR), Mining challenge,} pp. 230--234,
+May 2019.}
+    \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------------
+\section{Projects}
+  \resumeSubHeadingListStart
+	\resumeSubItem{Viking Chess AI}{\hspace*{\fill}Artificial Intelligence - \textit{Winter 2018}}
+	\resumeSubHeadingListStart
+		\resumeItem{}{Developed a Java game playing agent to play Viking Chess utilizing a unique variation of a mini-max algorithm}
+		\resumeItem{}{Game agent competed in a round robin style tournament against 300+ classmates. Agent performed in the top 15\% of all players.}
+	\resumeSubHeadingListEnd
+	\resumeSubItem{Distributed Reservation System}{\hspace*{\fill}Distributed Systems - \textit{Fall 2018}}
+	\resumeSubHeadingListStart
+		\resumeItem{}{Distributed a Java reservation system across several servers by using a middleware based tiered architecture}
+		\resumeItem{}{Fully implemented persistent memory, failure handling, 2-phase commit, and 2-phase locking}
+	\resumeSubHeadingListEnd
+	\resumeSubItem{Full Stack Web Application}{\hspace*{\fill}Database Systems - \textit{Winter 2018}}
+	\resumeSubHeadingListStart
+		\resumeItem{}{Developed an online grocery store web application using Angular 2, Flask, and PostgreSQL}
+		\resumeItem{}{Primary contributor for the backend (database) component. Optimized queries for faster content delivery and designed database structure to meet the applications requirements}
+		\resumeItem{}{Worked in a four person team using Git version control and GitHub issues as a primary method of project management}
+	\resumeSubHeadingListEnd
+  \resumeSubHeadingListEnd
+
+
+%--------PROGRAMMING SKILLS------------
+\section{Programming Languages \& Technologies}
+  \resumeSubHeadingListStart
+    \resumeItem{
+      \textbf{Languages}}{: Java, Python, C/C++, JavaScript, HTML/CSS}
+      
+    \resumeItem{
+	\textbf{Technologies}}{: Git, JUnit, Maven/Gradle/CMake, TravisCI, Docker, Vue.js, Node.js, MongoDB, PostgreSQL}
+	
+  \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
