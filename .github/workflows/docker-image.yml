@@ -14,6 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - uses: satackey/action-docker-layer-caching@v0.0.8
+      # Ignore the failure of a step and avoid terminating the job.
+      continue-on-error: true
     - name: Build the Docker image
       run: docker build -t latex .
     - name: Run the PDF build inside container
@@ -27,7 +30,7 @@ jobs:
         path: oc_resume.pdf
         retention-days: 365
     - name: move to dist
-      run: mdkir dist && mv oc_resume.pdf dist/oc_resume.pdf
+      run: mkdir dist && mv oc_resume.pdf dist/oc_resume.pdf
     - name: deploy to distribution repo
       uses: s0/git-publish-subdir-action@master
       env:
