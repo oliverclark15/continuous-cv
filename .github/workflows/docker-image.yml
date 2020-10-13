@@ -21,6 +21,7 @@ jobs:
     - name: testing
       run: ls -lah && pwd 
     - name: artifactization
+      uses: actions/upload-artifact@v2
       with:
         name: pdf
         path: oc_resume.pdf
