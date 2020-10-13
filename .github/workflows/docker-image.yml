@@ -22,7 +22,7 @@ jobs:
     - name: Run the PDF build inside container
       run: docker run --rm -i -v "$PWD":/data latex pdflatex oc_resume.tex 
     - name: testing
-      run: ls -lah && pwd 
+      run: ls -lah && pwd && ls -lah .github/
     - name: artifactization
       uses: actions/upload-artifact@v2
       with:
