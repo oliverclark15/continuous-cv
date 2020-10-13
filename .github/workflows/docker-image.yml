@@ -15,4 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag latex:$(date +%s) && docker run --rm -i -v "$PWD":/data latex pdflatex oc_resume.tex
+      run: docker build . --file Dockerfile --tag latex:$(date +%s)
+    - name: Run the PDF build inside container
+      run: docker run --rm -i -v "$PWD":/data latex pdflatex oc_resume.tex 
