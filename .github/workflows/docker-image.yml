@@ -34,7 +34,8 @@ jobs:
     - name: deploy to distribution repo
       uses: s0/git-publish-subdir-action@master
       env:
-        REPO: git@github.com:oliverclark15/resume.git
+        REPO: git@github.com:oliverclark15/docker_resume.git
         BRANCH: master
         FOLDER: dist
+        MESSAGE: "{msg}"
         SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
