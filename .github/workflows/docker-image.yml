@@ -26,3 +26,12 @@ jobs:
         name: pdf
         path: oc_resume.pdf
         retention-days: 365
+    - name: move to dist
+      run: mdkir dist && mv oc_resume.pdf dist/oc_resume.pdf
+    - name: deploy to distribution repo
+      uses: s0/git-publish-subdir-action@master
+      env:
+        REPO: git@github.com:oliverclark15/resume.git
+        BRANCH: master
+        FOLDER: dist
+        SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
