@@ -18,3 +18,10 @@ jobs:
       run: docker build -t latex .
     - name: Run the PDF build inside container
       run: docker run --rm -i -v "$PWD":/data latex pdflatex oc_resume.tex 
+    - name: testing
+      run: ls -lah && pwd 
+    - name: artifactization
+      with:
+        name: pdf
+        path: oc_resume.pdf
+        retention-days: 365
