@@ -7,6 +7,7 @@
 \documentclass[letterpaper,11pt]{article}
 
 \usepackage{latexsym}
+\usepackage{fontawesome}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
 \usepackage{marvosym}
@@ -17,7 +18,11 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{blindtext}
+\usepackage{xcolor} 
+\input glyphtounicode
+\pdfgentounicode=1
 
+\usepackage[colorlinks]{hyperref} 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
 \fancyfoot{}
@@ -28,7 +33,7 @@
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.2in}
+\addtolength{\topmargin}{-.3in}
 \addtolength{\textheight}{1.0in}
 
 \urlstyle{same}
@@ -36,11 +41,12 @@
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
+\definecolor{swagrey}{gray}{0.6}
 
 % Sections formatting
 \titleformat{\section}{
   \vspace{-6pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+}{}{0em}{}[\color{swagrey}\titlerule \vspace{-5pt}]
 
 %-------------------------
 % Custom commands
@@ -82,26 +88,50 @@
 
 %----------HEADING-----------------
 \begin{center}
-    \textbf{\huge{Oliver Clark}}
+    \textbf{\huge{Oliver Clark}} \\ 
+    \vspace{10}
+    \noindent
+    \href{mailto:oliver@oliverclark.org}{\raisebox{-0.2\height}{\Large \faInbox} oliver@oliverclark.org} \quad
+    \href{tel:8023772870}{\raisebox{-0.2\height}{\Large \faPhone} (802) 377-2870} \quad
+    \href{https://www.linkedin.com/in/oliverclark15/}{\raisebox{-0.2\height}{\Large \faLinkedinSquare} oliverclark15} \quad
+    \href{https://github.com/oliverclark15}{\raisebox{-0.2\height}{\Large \faGithub} oliverclark15} \quad
+    \href{https://oliverclark.org}{\raisebox{-0.2\height}{\Large \faGlobe} https://oliverclark.org}
+    \vspace{}
 \end{center}
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-   \href{https://oliverclark.org/}{https://oliverclark.org/} & Email : \href{mailto:oliverclark15@gmail.com}{oliverclark15@gmail.com}\\
-  \href{https://oliverclark.org/}{https://oliverclark.org/} & Mobile : +1-802-377-2870\\
-\end{tabular*}
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+  
+      \resumeSubheading{Cox Automotive Inc.}{Burlington, VT}
+    {Software Engineer I}{April 2021 --}
+     \resumeSubHeadingListStart
+    \resumeSubHeadingListEnd
+    \vspace{-10pt}
+    \resumeSubheading{Gorilla Group}{Montreal, QC, Canada }
+    {Backend Software Engineer}{July 2020 -- April 2021}
+     \resumeSubHeadingListStart
+          \resumeItem{}{Supporting production of multiple large enterprise e-commerce web applications (\textbf{SAP Hybris}, \textbf{Java Spring}) by fixing bugs and implementing new features}
+        \resumeItem{}{Communicating regularly with several clients to understand their specific needs and assist them in managing their site}
+    \resumeSubHeadingListEnd
+    \vspace{-10pt}
+    \resumeSubheading
+      {The MITRE Corporation}{Bedford, MA}
+      {Cyber Security Intern}{May 2018 -- August 2019}
+      \resumeSubHeadingListStart
+        \resumeItem{}{Designed a continuous integration \& deployment pipeline for an internal \textbf{Python} project using \textbf{GitHub Actions}}
+        \resumeItem{}{Built a command line tool used to interact with remote \textbf{Git} repositories with custom access control and advanced file search functionality}
+        \
 
+      \resumeSubHeadingListEnd
+  \resumeSubHeadingListEnd
+  
+  
 %-----------EDUCATION-----------------
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
       {McGill University}{Montreal, QC, Canada}
-      {Faculty of Engineering, Bachelor of Software Engineering (BSE)}{2015-2020}
-  
-  
-
-   \resumeSubItem{Relevant Coursework}{}
-	\resumeSubHeadingListStart	
-	\resumeSubItem{Computer \& Software Engineering}{: Algorithms \& Data Structures, Algorithm Design, Applied Machine Learning, Artificial Intelligence, Distributed Systems, Computer Organization, Database Systems, Intro to Software Eng., Model-Based Programming, Operating Systems, Parallel Computing, Realistic Image Synthesis, Signals \& Networks, Software Engineering Practice, Software Delivery, Software Validation}
-	\resumeSubItem{Mathematics}{: Discrete Math, Calculus III, Linear Algebra, ODEs for Engineers, Probability \& Stats for Engineers}
+      {Faculty of Engineering, Bachelor of Software Engineering (BSE)}{Aug. 2015 -- Dec. 2019}
 
 	\resumeSubHeadingListEnd
 
@@ -111,31 +141,12 @@
 
 
 
-
-%-----------EXPERIENCE-----------------
-\section{Experience}
-  \resumeSubHeadingListStart
   
-    \resumeSubheading{Gorilla Group}{Montreal, QC, Canada}
-    {Backend Software Developer}{July 2020 - }
-     \resumeSubHeadingListStart
-        \resumeItem{} {\blindtext}
-    \resumeSubHeadingListEnd
-    \resumeSubheading
-      {The MITRE Corporation}{Bedford, MA}
-      {Cyber Security Intern}{May 2018 - August 2019}
-      \resumeSubHeadingListStart
-        \resumeItem{} {Identified potential vulnerabilities in a simulated avionics environment before proposing mitigation techniques to the team through documentation and presentation}
-        \resumeItem{} {Developed prototype Git infrastructure to allow fast code search and fine-grained access control on secure files for an internal project}
-        \resumeItem{} {Performed security based code evaluations on internal and open-source applications using tools such as Fortify, Klocwork, and Semmle}
-        \resumeItem{} {Created a continuous integration \& deployment pipeline  to be used in development of an internal Python project}
-      \resumeSubHeadingListEnd
-  \resumeSubHeadingListEnd
 
 %-----------PUBLICATIONS-----------------
 \section{Publications}
   \resumeSubHeadingListStart
-    \resumeSubItem{}{D. Abric, \underline{O. E. Clark}, M. Caminiti, K. Gallaba, and S. McIntosh , ``Can Duplicate Questions
+    \resumeSubItem{}{D. Abric, \underline{O. E. Clark}, M. Caminiti, K. Gallaba, and S. McIntosh, ``Can Duplicate Questions
 on Stack Overflow Benefit the Software Development Community?'', In \textit{Proceedings of the
 16th International Conference on Mining Software Repositories (MSR), Mining challenge,} pp. 230--234,
 May 2019.}
@@ -143,22 +154,29 @@ May 2019.}
 
 %-----------PROJECTS-----------------
 \section{Projects}
+
   \resumeSubHeadingListStart
-	\resumeSubItem{Viking Chess AI}{\hspace*{\fill}Artificial Intelligence - \textit{Winter 2018}}
+  	\resumeSubItem{Blueberry Hill Outdoor Center website}{: \textit{available in production at \href{https://blueberryhilltrails.com/}{https://blueberryhilltrails.com}}}
+		\resumeSubHeadingListStart
+		\resumeItem{}{Designed and built a \textbf{JavaScript} single page web application using \textbf{Vue.js}, and automated for client content management with \textbf{Git} and \textbf{GitHub Actions}}
+		\resumeItem{}{Implemented a custom \textbf{Python} backend using \textbf{AWS Lambda} to perform COVID-19 contact tracing}
+		\resumeSubHeadingListEnd
+	\resumeSubItem{Viking Chess AI}{: \textit{summary report available at \href{https://oliverclark.org/tablut_report.pdf}{https://oliverclark.org}}}
 	\resumeSubHeadingListStart
-		\resumeItem{}{Developed a Java game playing agent to play Viking Chess utilizing a unique variation of a mini-max algorithm}
-		\resumeItem{}{Game agent competed in a round robin style tournament against 300+ classmates. Agent performed in the top 15\% of all players.}
+		\resumeItem{}{Implemented a \textbf{Java} game playing agent using a unique implementation of a minimax algorthim that performed in the top 15\% of a 300+ person class}
 	\resumeSubHeadingListEnd
-	\resumeSubItem{Distributed Reservation System}{\hspace*{\fill}Distributed Systems - \textit{Fall 2018}}
+	\resumeSubItem{Distributed Reservation System}{: \textit{source code available on GitHub at  \href{https://tinyurl.com/y5ven8lu}{https://tinyurl.com/y5ven8lu}}}
 	\resumeSubHeadingListStart
-		\resumeItem{}{Distributed a Java reservation system across several servers by using a middleware based tiered architecture}
-		\resumeItem{}{Fully implemented persistent memory, failure handling, 2-phase commit, and 2-phase locking}
-	\resumeSubHeadingListEnd
-	\resumeSubItem{Full Stack Web Application}{\hspace*{\fill}Database Systems - \textit{Winter 2018}}
+		\resumeItem{}{Distributed a \textbf{Java} reservation system across several servers by using a middleware based tiered architecture including transactional management, persistent memory, 2-phase commit, failure handling, and 2-phase locking}
+ 	\resumeSubHeadingListEnd
+
+	
+	
+	
+	\resumeSubItem{Grocer-Easy}{: \textit{simple web application providing basic e-commerce functionality for a grocery store}}
 	\resumeSubHeadingListStart
-		\resumeItem{}{Developed an online grocery store web application using Angular 2, Flask, and PostgreSQL}
-		\resumeItem{}{Primary contributor for the backend (database) component. Optimized queries for faster content delivery and designed database structure to meet the applications requirements}
-		\resumeItem{}{Worked in a four person team using Git version control and GitHub issues as a primary method of project management}
+	    \resumeItem{}{Full stack app consisting of a \textbf{Python} backend (\textbf{Flask}), a \textbf{PostgreSQL} database, and an \textbf{Angular 2} frontend}
+
 	\resumeSubHeadingListEnd
   \resumeSubHeadingListEnd
 
@@ -167,10 +185,9 @@ May 2019.}
 \section{Programming Languages \& Technologies}
   \resumeSubHeadingListStart
     \resumeItem{
-      \textbf{Languages}}{: Java, Python, C/C++, JavaScript, HTML/CSS}
-      
+      \textbf{Languages}}{: Java, Python, JavaScript, C/C++}
     \resumeItem{
-	\textbf{Technologies}}{: Git, JUnit, Maven/Gradle/CMake, TravisCI, Docker, Vue.js, Node.js, MongoDB, PostgreSQL}
+	\textbf{Technologies}}{: Git, JUnit, Django, Flask, Ant/Maven/Gradle/CMake, Docker, Vue.js, Node.js, MongoDB, PostgreSQL, SAP Hybris}
 	
   \resumeSubHeadingListEnd
 
