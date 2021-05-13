@@ -9,6 +9,7 @@ if __name__ == "__main__":
 	with open(fp) as f:
 		try:
 			for x in re.findall('(?:http|ftp|https):\/\/[\w_-]+(?:(?:\.[\w_-]+)+)[\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-]?', f.read()):
+				print(x)
 				if(re.match('404',requests.get(x).text)):
 					bad_links.append(x)
 		except requests.RequestException as e:
