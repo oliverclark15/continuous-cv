@@ -5,6 +5,10 @@ name: dead link checker
 on:
   schedule:
     - cron: '0 0 * * 6' # run at 00:00 on Saturday
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
   workflow_dispatch:
 
 jobs:
