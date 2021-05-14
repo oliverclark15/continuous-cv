@@ -13,23 +13,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # - uses: actions/checkout@v2
-      # - uses: satackey/action-docker-layer-caching@v0.0.8
-      #   # Ignore the failure of a step and avoid terminating the job.
-      #   continue-on-error: true'
-
-
-
-    - name: cache docker image
-        id: cache-image
-        uses: actions/cache@v2
-        with:
-          path: path/to/store/cache
-          key: cache-docker-image-${{ github.sha }}
-
-      - name: build docker image
-        if: steps.cache-image.outputs.cache-hit != 'true'
-          run: docker build -t latex . && echo 'hi'
+    - uses: actions/checkout@v2
+    - uses: satackey/action-docker-layer-caching@v0.0.8
+      # Ignore the failure of a step and avoid terminating the job.
+      continue-on-error: true
+    - name: Build the Docker image
+      run: docker build -t latex .
     - name: Run the PDF build inside container
       run: docker run --rm -i -v "$PWD":/data latex pdflatex oc_resume.tex 
     - name: testing
