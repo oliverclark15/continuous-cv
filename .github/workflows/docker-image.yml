@@ -22,7 +22,7 @@ jobs:
 
     - name: build docker image
       if: steps.cache-image.outputs.cache-hit != 'true'
-      run: cd ../.. && ls -lah * && docker build -t latex . && echo 'hi'
+      run: cd docker_resume && ls -lah * && docker build -t latex . && echo 'hi'
     - name: Run the PDF build inside container
       run: docker run --rm -i -v "$PWD":/data latex pdflatex oc_resume.tex 
     - name: testing
